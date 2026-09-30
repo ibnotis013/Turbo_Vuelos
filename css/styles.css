@@ -1,0 +1,145 @@
+/* =====================================================
+   MODO AVENTURA · Práctica 1 (Grid y Flex)
+   Colores y tipografías según la guía de estilos.
+   ===================================================== */
+
+/* ---------- 1. VARIABLES CSS ---------- */
+:root {
+  --color-principal: #ACDAF9;   /* fondos suaves */
+  --color-acento: #FF8A65;      /* botones y detalles */
+  --color-oscuro: #103B50;      /* textos, menú, footer */
+  --color-claro: #5BA9D9;       /* enlaces secundarios */
+  --color-medio: #246B8F;       /* títulos y elementos importantes */
+  --color-blanco: #FFFFFF;
+
+  --fuente-titulos: "Poppins", Arial, sans-serif;
+  --fuente-subtitulos: "Montserrat", Arial, sans-serif;
+  --fuente-texto: "Roboto", Arial, sans-serif;
+
+  --espacio: 1.5rem;            /* margen base */
+  --radio: 14px;
+  --ancho-max: 1100px;
+}
+
+/* ---------- 2. RESET Y BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--color-oscuro);
+  background: var(--color-blanco);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--fuente-titulos); color: var(--color-medio); line-height: 1.2; }
+
+a:focus-visible, .boton:focus-visible { outline: 3px solid var(--color-acento); outline-offset: 3px; }
+
+/* Contenedor centrado reutilizable */
+.contenedor { width: min(100% - 2 * var(--espacio), var(--ancho-max)); margin-inline: auto; }
+
+.titulo-seccion { text-align: center; font-size: 2rem; margin: 0 0 var(--espacio); }
+
+section { padding-block: 3.5rem; }
+
+/* ---------- 3. CABECERA + MENÚ ---------- */
+.cabecera { background: var(--color-oscuro); position: sticky; top: 0; z-index: 10; }
+
+/* FLEXBOX (1): cabecera → logo a la izquierda y menú a la derecha,
+   centrados verticalmente con align-items */
+.cabecera .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio);
+  padding-block: 0.8rem;
+}
+
+.logo { display: flex; align-items: center; gap: .6rem; text-decoration: none;
+        color: var(--color-blanco); font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.4rem; }
+.logo img { width: 42px; height: 42px; background: var(--color-principal); border-radius: 50%; padding: 6px; }
+
+/* FLEXBOX (2): lista del menú en horizontal */
+.menu-principal { display: flex; flex-wrap: wrap; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+
+.menu-principal a { color: var(--color-blanco); text-decoration: none; font-family: var(--fuente-subtitulos);
+                    font-weight: 600; padding-block: .3rem; border-bottom: 2px solid transparent; }
+.menu-principal a:hover,
+.menu-principal a[aria-current="page"] { border-color: var(--color-acento); }
+
+/* ---------- 4. HERO / BIENVENIDA ---------- */
+.hero { background: linear-gradient(160deg, var(--color-principal), var(--color-blanco)); text-align: center; padding-block: 5rem; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0 0 1rem; color: var(--color-oscuro); }
+
+/* FLEXBOX (3): las tres palabras "Viaja / Vive / Explora" en fila */
+.hero-lema { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 3rem; list-style: none;
+             padding: 0; margin: 0 0 2rem; font-family: var(--fuente-subtitulos); font-size: 1.3rem; font-weight: 600; color: var(--color-medio); }
+
+.boton { display: inline-block; background: var(--color-acento); color: var(--color-oscuro); font-family: var(--fuente-subtitulos);
+         font-weight: 700; text-decoration: none; padding: .8rem 1.8rem; border-radius: 999px; transition: background .2s; }
+.boton:hover { background: var(--color-oscuro); color: var(--color-blanco); }
+
+/* ---------- 5. SOBRE NOSOTROS ---------- */
+/* GRID (1): imagen + texto lado a lado en escritorio (2 columnas).
+   En móvil pasa a 1 columna (ver media query al final) */
+.sobre-nosotros-contenido { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2.5rem; align-items: center; }
+.sobre-nosotros-contenido img { border-radius: var(--radio); width: 100%; }
+
+/* ---------- 6. DESTINOS DESTACADOS ---------- */
+#destinos { background: var(--color-principal); }
+
+/* GRID (2): rejilla de 3 tarjetas que se adapta sola (auto-fit).
+   minmax evita que las tarjetas sean menores de 260px */
+.destinos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--espacio); }
+
+/* FLEXBOX (4): cada tarjeta en columna; margin-top:auto empuja
+   el enlace "Saber más" siempre al final */
+.tarjeta { display: flex; flex-direction: column; background: var(--color-blanco); border-radius: var(--radio); overflow: hidden; }
+.tarjeta img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.tarjeta-cuerpo { display: flex; flex-direction: column; flex: 1; padding: 1.2rem; }
+.tarjeta h3 { margin: 0 0 .5rem; }
+.tarjeta p { margin: 0 0 1rem; }
+.tarjeta .saber-mas { margin-top: auto; align-self: flex-start; color: var(--color-medio); font-weight: 700; }
+
+/* ---------- 7. BLOG ---------- */
+.blog-intro { text-align: center; padding-block: 3.5rem 0; }
+.blog-intro h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .5rem; }
+
+/* GRID (3): entradas del blog → 3 columnas en escritorio,
+   2 en tablet y 1 en móvil (media queries) */
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--espacio); }
+
+.entrada { display: flex; flex-direction: column; border: 2px solid var(--color-principal); border-radius: var(--radio); overflow: hidden; }
+.entrada img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.entrada-cuerpo { padding: 1.2rem; }
+.entrada h2 { font-size: 1.25rem; margin: 0 0 .3rem; }
+.entrada time { display: block; font-size: .85rem; color: var(--color-claro); font-weight: 700; margin-bottom: .6rem; }
+.entrada p { margin: 0; }
+
+/* ---------- 8. PIE DE PÁGINA ---------- */
+.pie { background: var(--color-oscuro); color: var(--color-blanco); padding-block: 1.8rem; }
+
+/* FLEXBOX (5): enlaces del pie repartidos en una fila que salta de línea si no caben */
+.pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
+.pie ul { display: flex; flex-wrap: wrap; gap: 1rem 2rem; list-style: none; margin: 0; padding: 0; }
+.pie a { color: var(--color-principal); }
+.pie p { margin: 0; }
+
+/* ---------- 9. RESPONSIVE ---------- */
+/* Tablet (≤ 900px): blog a 2 columnas */
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Móvil (≤ 640px): todo a 1 columna y menú en vertical */
+@media (max-width: 640px) {
+  .cabecera .contenedor { flex-direction: column; }             /* FLEX: logo encima del menú */
+  .menu-principal { flex-direction: column; align-items: center; gap: .5rem; }
+  .sobre-nosotros-contenido { grid-template-columns: 1fr; }     /* GRID: imagen y texto apilados */
+  .blog-grid { grid-template-columns: 1fr; }                    /* GRID: 1 columna */
+  .pie .contenedor, .pie ul { flex-direction: column; align-items: center; text-align: center; }
+  .hero { padding-block: 3.5rem; }
+}
