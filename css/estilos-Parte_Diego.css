@@ -1,0 +1,64 @@
+/* ========== Variables (paleta de la guía de estilos) ========== */
+:root {
+  --principal: #ACDAF5;   /* fondo principal */
+  --secundario: #FF8A65;  /* botones secundarios y detalles */
+  --oscuro: #163B50;      /* navegación footer y textos destacados */
+  --boton: #5BA9D9;       /* botones y enlaces */
+  --importante: #24688F;  /* títulos y elementos importantes */
+  --blanco: #FFFFFF;      /* fondo y tarjetas */
+}
+
+/* ========== Base ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Roboto", sans-serif; background: var(--principal); color: var(--oscuro); line-height: 1.6; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+a { color: var(--boton); }
+h1, h2, h3 { font-family: "Poppins", sans-serif; color: var(--importante); }
+
+/* ========== Cabecera (Flexbox) ========== */
+.cabecera { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 2rem; background: var(--blanco); }
+.logo { width: 180px; }
+.menu { display: flex; gap: 1.5rem; }
+.menu a { font-family: "Montserrat", sans-serif; font-weight: 600; text-decoration: none; color: var(--importante); }
+.menu a:hover { color: var(--secundario); }
+
+/* ========== Destinos (Grid) ========== */
+.destinos { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; text-align: center; }
+.subtitulo { font-family: "Montserrat", sans-serif; font-weight: 500; font-size: 1.2rem; margin: .5rem 0 2rem; }
+.rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.tarjeta { display: flex; flex-direction: column; gap: .8rem; background: var(--blanco); padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(22, 59, 80, .15); text-align: left; }
+.tarjeta img { border-radius: 8px; }
+.tarjeta p { flex: 1; }
+
+/* ========== Botones ========== */
+.boton { align-self: flex-start; display: inline-block; padding: .6rem 1.2rem; background: var(--boton); color: var(--blanco); font-family: "Montserrat", sans-serif; font-weight: 600; text-decoration: none; border-radius: 8px; }
+.boton:hover { background: var(--importante); }
+.boton-secundario { background: var(--secundario); }
+.boton-secundario:hover { background: var(--oscuro); }
+
+/* ========== Oferta destacada (Flexbox) ========== */
+.oferta { background: var(--blanco); padding: 2.5rem 1.5rem; }
+.oferta > h2 { text-align: center; margin-bottom: 1.5rem; }
+.oferta-contenido { display: flex; align-items: center; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+.oferta-imagen { flex: 1 1 50%; }
+.oferta-imagen img { border-radius: 12px; }
+.oferta-imagen figcaption { font-family: "Poppins", sans-serif; font-weight: 600; color: var(--importante); margin-top: .5rem; }
+.oferta-texto { flex: 1 1 50%; display: flex; flex-direction: column; gap: 1rem; }
+
+/* ========== Pie (Flexbox) ========== */
+.pie { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1.5rem 2rem; background: var(--oscuro); color: var(--blanco); }
+.pie-enlaces { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.pie a { color: var(--blanco); font-family: "Montserrat", sans-serif; text-decoration: none; }
+.pie a:hover { color: var(--secundario); }
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .rejilla { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .rejilla { grid-template-columns: 1fr; }
+  .oferta-contenido { flex-direction: column; }
+  .cabecera, .pie { flex-direction: column; text-align: center; }
+  .pie-enlaces, .menu { justify-content: center; }
+}

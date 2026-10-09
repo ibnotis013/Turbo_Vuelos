@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Viajes y packs | TurboVuelos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&amp;family=Poppins:wght@600;700&amp;family=Roboto:wght@400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos-Parte_Diego.css">
+</head>
+<body>
+
+  <!-- CABECERA (Flexbox) -->
+  <header class="cabecera">
+    <a href="html-Parte-Nico.html"><img class="logo" src="../img/Verde_Limón_Orgánico_Retro_Tropical_Viajes_y_Alojamiento_Guía_de_Estilo_Visual_de_Marca-removebg-preview.png" alt="Logo de TurboVuelos" width="220" height="60"></a>
+    <nav aria-label="Navegación principal">
+      <ul class="menu">
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- DESTINOS (CSS Grid) -->
+    <section class="destinos" id="destinos" aria-labelledby="titulo-destinos">
+      <h1 id="titulo-destinos">Viajes y packs</h1>
+      <p class="subtitulo">Descubre nuestros destinos favoritos</p>
+
+      <div class="rejilla">
+        <article class="tarjeta">
+          <h2>Roma</h2>
+          <img src="../img/Roma.jpg" alt="Vista de Roma" width="600" height="400">
+          <p>Historia, plazas y buena pasta en la ciudad eterna. Pack de 4 noches con vuelo incluido.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+        <article class="tarjeta">
+          <h2>París</h2>
+          <img src="../img/París.jpg" alt="Vista de París" width="600" height="400">
+          <p>Torre Eiffel, museos y paseos junto al Sena. Escapada romántica de fin de semana.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+        <article class="tarjeta">
+          <h2>Santorini</h2>
+          <img src="../img/Santorini.jpg" alt="Vista de Santorini" width="600" height="400">
+          <p>Casas blancas, atardeceres únicos y playas volcánicas en el mar Egeo.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+        <article class="tarjeta">
+          <h2>Nueva York</h2>
+          <img src="../img/nuevayork.jpg" alt="Vista de Nueva York" width="600" height="400">
+          <p>La ciudad que nunca duerme: Manhattan, Central Park y Broadway en un solo viaje.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+        <article class="tarjeta">
+          <h2>Tokio</h2>
+          <img src="../img/tokio.jpg" alt="Vista de Tokio" width="600" height="400">
+          <p>Tradición y tecnología: templos, barrios de neón y gastronomía inolvidable.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+        <article class="tarjeta">
+          <h2>Tailandia</h2>
+          <img src="../img/tailandia.jpg" alt="Vista de Tailandia" width="600" height="400">
+          <p>Templos, mercados flotantes e islas de aguas cristalinas para desconectar.</p>
+          <a class="boton" href="#contacto">Ver pack</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- OFERTA DESTACADA (Flexbox) -->
+    <section class="oferta" id="oferta" aria-labelledby="titulo-oferta">
+      <h2 id="titulo-oferta">Oferta destacada</h2>
+      <div class="oferta-contenido">
+        <figure class="oferta-imagen">
+          <img src="../img/londres.jpg" alt="Vista de Londres" width="600" height="400">
+          
+        </figure>
+        <div class="oferta-texto">
+          <h3>Londres</h3>
+          <p>Descubre la capital británica: el Big Ben, el Támesis, mercados con encanto y museos gratuitos. Incluye vuelo de ida y vuelta y 3 noches de hotel en el centro.</p>
+          <a class="boton boton-secundario" href="#contacto">¡Reserva ahora!</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA (Flexbox) -->
+  <footer class="pie" id="contacto">
+    <p>&copy; 2026 TurboVuelos. Todos los derechos reservados.</p>
+    <nav aria-label="Enlaces del pie de página">
+      <ul class="pie-enlaces">
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="mailto:info@turbovuelos.example">Contacto</a></li>
+        <li><a href="#">Redes sociales</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>
